@@ -4,14 +4,16 @@ import '@/plugins/svg-import';
 import '@/behaviors/hello-world';
 import { createUiComponents, log } from '@/lib/classes/utility';
 import { HelloWorld } from '@/components/hello-world';
+import { GetRequest } from '@/components/sendRequest';
 
 async function init() {
 	try {
-		console.log( 'hello' );
-		console.log( 'dfgdfgdgd' );
-		console.log( 'dgfdfgf' );
-		console.log( 'dfgdfgdgd' );
 		createUiComponents( '.hello-world', HelloWorld );
+		createUiComponents( '.get-request', GetRequest, {
+			options: {
+				url: '/v3/covid-19/all',
+			},
+		} );
 	} catch ( e ) {
 		log( e.message );
 	}
