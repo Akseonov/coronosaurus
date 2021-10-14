@@ -1,0 +1,51 @@
+.app {
+    font-family: $body-font-family;
+    font-size: $font-size-root;
+    line-height: $line-height-root;
+    box-sizing: border-box;
+    word-break: normal;
+    overflow: hidden;
+
+    &::-ms-clear,
+    &::-ms-reveal {
+        display: none;
+    }
+
+    *,
+    ::before,
+    ::after {
+        background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+        box-sizing: inherit;
+    }
+
+    ::before,
+    ::after {
+        text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+        vertical-align: inherit;
+    }
+}
+
+@include theme('app') using($theme) {
+    color: map-deep-get($theme, 'text', 'primary');
+    background: map-get($theme, 'background');
+
+    .primary {
+        @include background-color(map-get($theme, 'primary'));
+
+        &--text {
+            @include text-color(map-get($theme, 'primary'))
+        }
+    }
+
+    .text--primary {
+        color: map-deep-get($theme, 'text', 'primary');
+    }
+
+    .text--secondary {
+        color: map-deep-get($theme, 'text', 'secondary');
+    }
+
+    .link {
+        color: map-get($theme, 'primary');
+    }
+}

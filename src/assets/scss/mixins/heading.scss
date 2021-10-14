@@ -1,0 +1,6 @@
+@mixin heading($name, $important: false) {
+    font-size: map-deep-get($headings, $name, 'size') if($important, !important, null);
+    font-weight: map-deep-get($headings, $name, 'weight');
+    line-height: map-deep-get($headings, $name, 'line-height');
+    letter-spacing: map-deep-get($headings, $name, 'letter-spacing');
+}

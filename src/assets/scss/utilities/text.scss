@@ -1,0 +1,54 @@
+@if ($utility-text-enable) {
+    $utilities: map-merge($utilities, (
+        "text-align": (
+            responsive: true,
+            property: text-align,
+            class: text,
+            values: left right center justify start end
+        ),
+        "text-decoration": (
+            property: text-decoration,
+            class: text-decoration,
+            values: line-through none overline underline
+        ),
+        "white-space": (
+            property: white-space,
+            class: text,
+            values: (
+                wrap: normal,
+                no-wrap: nowrap,
+            )
+        ),
+        "overflow-wrap": (
+            property: overflow-wrap word-break,
+            class: text,
+            values: (break: break-word)
+        ),
+        "text-overflow": (
+            property: white-space overflow text-overflow,
+            class: text,
+            values: (truncate: nowrap hidden ellipsis)
+        ),
+        "text-transform": (
+            property: text-transform,
+            class: text,
+            values: none capitalize lowercase uppercase
+        ),
+        "font-weight": (
+            property: font-weight,
+            class: font-weight,
+            values: $font-weights,
+        ),
+        "font-style": (
+            property: font-style,
+            class: font-style,
+            values: italic,
+        ),
+    ));
+
+    .text-ellipsis {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

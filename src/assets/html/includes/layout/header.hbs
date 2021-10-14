@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- MDI-иконки -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
+</head>
+<body>
+<!-- SVG-спрайт -->
+<div class="d-none">
+	{{ svg-sprite-inject compilation }}
+</div>
+
+<!-- Хэдер -->
+<div class="wrapper">
+	<div class="content">
+		<header class="header container">
+			<a href="#" class="header__logo">
+				<div class="header__logo-img"><img src="@/assets/img/main-logo.png" alt="main-logo"></div>
+				<div class="header__logo-text ml-4">Covid-19</div>
+			</a>
+		</header>
+
+		<!-- Основной контейнер сайта -->
+		<main>

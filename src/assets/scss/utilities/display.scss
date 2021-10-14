@@ -1,0 +1,30 @@
+@if ($utility-display-enable) {
+    $utilities: map-merge($utilities, (
+        "overflow": (
+            property: overflow,
+            values: auto hidden visible,
+        ),
+        "overflow-x": (
+            property: overflow-x,
+            values: auto hidden
+        ),
+        "overflow-y": (
+            property: overflow-y,
+            values: auto hidden
+        ),
+        "display": (
+            responsive: true,
+            print: true,
+            property: display,
+            class: d,
+            values: none inline inline-block block table table-row table-cell flex inline-flex
+        ),
+        "float": (
+            responsive: true,
+            print: true,
+            property: float,
+            class: float,
+            values: none left right
+        ),
+    ));
+}

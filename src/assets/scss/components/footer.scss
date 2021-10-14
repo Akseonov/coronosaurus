@@ -1,0 +1,40 @@
+.footer {
+    flex: 0 0 auto;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            .footer__logo-text {
+                color: #bb1a1a;
+            }
+        }
+    }
+
+    &__logo-img {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    &__logo-text {
+        font-size: 15px;
+        font-weight: 300;
+        text-transform: uppercase;
+        transition: color 0.5s;
+        color: black;
+    }
+}

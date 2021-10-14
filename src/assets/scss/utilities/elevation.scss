@@ -1,0 +1,7 @@
+@if ($utility-elevation-enable) {
+    @each $opacity in map-keys($shadow-key-umbra) {
+        .elevation-#{$opacity} {
+            @include elevation($opacity, true);
+        }
+    }
+}

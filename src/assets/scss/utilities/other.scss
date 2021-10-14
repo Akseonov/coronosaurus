@@ -1,0 +1,19 @@
+.cursor {
+    &-pointer {
+        cursor: pointer;
+    }
+}
+
+.postfix {
+    &--rubles:after {
+        content: ' руб.';
+    }
+
+    &--rubles-icon:after {
+        content: ' ₽';
+    }
+
+    &--meters-square:after {
+        content: ' м²';
+    }
+}

@@ -1,0 +1,24 @@
+image: node:latest
+
+pipelines:
+  branches:
+    master:
+      - step:
+          deployment: production
+          name: Deploy to production
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+            - scp -r ./$BUILD_DIR $USER@$HOST:$REMOTE_PATH
+    develop:
+      - step:
+          deployment: devaid
+          name: Deploy to devaid
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+            - scp -r ./$BUILD_DIR $USER@$HOST:$REMOTE_PATH

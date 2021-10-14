@@ -1,0 +1,18 @@
+$border-radius-root: 8px;
+$border-width-root: 1px;
+
+$border-widths: ();
+
+@for $i from 0 through 2 {
+    $border-widths: map-merge($border-widths, ($i: $border-width-root * $i))
+}
+
+$rounded: (
+    0: 0,
+    'sm': $border-radius-root / 2,
+    null: $border-radius-root,
+    'lg': $border-radius-root * 2,
+    'xl': $border-radius-root * 6,
+    'pill': 9999px,
+    'circle': 50%
+);

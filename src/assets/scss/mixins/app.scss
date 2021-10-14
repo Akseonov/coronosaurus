@@ -1,0 +1,9 @@
+@mixin app() {
+    @if ($app-wrapper-class) {
+        .#{$app-wrapper-class} {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

@@ -1,0 +1,14 @@
+@if ($utility-sizing-enable) {
+    $utilities: map-merge($utilities, (
+        "width": (
+            property: width,
+            class: w,
+            values: $sizes,
+        ),
+        "height": (
+            property: height,
+            class: h,
+            values: $sizes,
+        ),
+    ));
+}

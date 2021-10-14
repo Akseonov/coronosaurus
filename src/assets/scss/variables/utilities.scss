@@ -1,0 +1,74 @@
+$color-pack: true;
+$utility-display-enable: true;
+$utility-flex-enable: true;
+$utility-margin-enable: true;
+$utility-negative-margin-enable: true;
+$utility-padding-enable: true;
+$utility-borders-enable: true;
+$utility-text-enable: true;
+$utility-typography-enable: true;
+$utility-responsive-typography-enable: true;
+$utility-position-enable: true;
+$utility-sizing-enable: true;
+$utility-elevation-enable: true;
+
+$utilities: (
+    "overflow": null,
+    "overflow-x": null,
+    "overflow-y": null,
+    "display": null,
+    "float": null,
+    "flex": null,
+    "flex-direction": null,
+    "flex-grow": null,
+    "flex-shrink": null,
+    "flex-wrap": null,
+    "justify-content": null,
+    "align-items": null,
+    "align-content": null,
+    "align-self": null,
+    "order": null,
+    "margin": null,
+    "margin-x": null,
+    "margin-y": null,
+    "margin-top": null,
+    "margin-right": null,
+    "margin-bottom": null,
+    "margin-left": null,
+    "margin-start": null,
+    "margin-end": null,
+    "negative-margin": null,
+    "negative-margin-x": null,
+    "negative-margin-y": null,
+    "negative-margin-top": null,
+    "negative-margin-right": null,
+    "negative-margin-bottom": null,
+    "negative-margin-left": null,
+    "negative-margin-start": null,
+    "negative-margin-end": null,
+    "padding": null,
+    "padding-x": null,
+    "padding-y": null,
+    "padding-top": null,
+    "padding-right": null,
+    "padding-bottom": null,
+    "padding-left": null,
+    "padding-start": null,
+    "padding-end": null,
+    "rounded": null,
+    "rounded-top": null,
+    "rounded-right": null,
+    "rounded-bottom": null,
+    "rounded-left": null,
+    "rounded-top-left": null,
+    "rounded-top-right": null,
+    "rounded-bottom-right": null,
+    "rounded-bottom-left": null,
+    "text-align": null,
+    "text-decoration": null,
+    "white-space": null,
+    "overflow-wrap": null,
+    "text-overflow": null,
+    "text-transform": null,
+    "typography": null
+);

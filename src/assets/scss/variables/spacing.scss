@@ -1,0 +1,9 @@
+$spacer: 4px;
+
+$spacers: ();
+$negative-spacers: ();
+
+@for $i from 0 through 16 {
+    $spacers: map-merge($spacers, ($i: $spacer * $i));
+    $negative-spacers: map-merge($negative-spacers, ("n" + $i: -$spacer * $i))
+}

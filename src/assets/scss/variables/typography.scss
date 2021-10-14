@@ -1,0 +1,125 @@
+$body-font-family: Sofia Pro, "sans-serif";
+$font-size-root: 16px;
+$line-height-root: 1.5;
+$heading-font-family: $body-font-family;
+
+$headings: (
+    'h1': (
+        'size': 54px,
+        'weight': 600,
+        'line-height': 52px,
+        'letter-spacing': -.015625em,
+        'font-family': $heading-font-family,
+        'text-transform': false
+    ),
+    'h2': (
+        'size': 42px,
+        'weight': 600,
+        'line-height': 1.5,
+        'letter-spacing': -.0083333333em,
+        'font-family': $heading-font-family,
+        'text-transform': false
+    ),
+    'h3': (
+        'size': 30px,
+        'weight': 600,
+        'line-height': 38px,
+        'letter-spacing': normal,
+        'font-family': $heading-font-family,
+        'text-transform': false
+    ),
+    'h4': (
+        'size': 24px,
+        'weight': 600,
+        'line-height': 1.5,
+        'letter-spacing': .0073529412em,
+        'font-family': $heading-font-family,
+        'text-transform': false
+    ),
+    'headline': (
+        'size': 22px,
+        'weight': 600,
+        'line-height': 32px,
+        'letter-spacing': normal,
+        'font-family': $heading-font-family,
+        'text-transform': false
+    ),
+    'title': (
+        'size': 18px,
+        'weight': 600,
+        'line-height': 32px,
+        'letter-spacing': .0125em,
+        'font-family': $heading-font-family,
+        'text-transform': false
+    ),
+    'subtitle-1': (
+        'size': 1rem,
+        'weight': normal,
+        'line-height': 1.75rem,
+        'letter-spacing': .009375em,
+        'font-family': $body-font-family,
+        'text-transform': false
+    ),
+    'subtitle-2': (
+        'size': .875rem,
+        'weight': 500,
+        'line-height': 1.375rem,
+        'letter-spacing': .0071428571em,
+        'font-family': $body-font-family,
+        'text-transform': false
+    ),
+    'body-1': (
+        'size': 16px,
+        'weight': 500,
+        'line-height': 1.5,
+        'letter-spacing': .03125em,
+        'font-family': $body-font-family,
+        'text-transform': false
+    ),
+    'body-2': (
+        'size': 14px,
+        'weight': 500,
+        'line-height': 1.5,
+        'letter-spacing': .0178571429em,
+        'font-family': $body-font-family,
+        'text-transform': false
+    ),
+    'button': (
+        'size': 16px,
+        'weight': 400,
+        'line-height': 1.5,
+        'letter-spacing': .0892857143em,
+        'font-family': $body-font-family,
+        'text-transform': false
+    ),
+    'caption': (
+        'size': 14px,
+        'weight': 500,
+        'line-height': 1.5,
+        'letter-spacing': .0333333333em,
+        'font-family': $body-font-family,
+        'text-transform': false
+    ),
+    'overline': (
+        'size': .75rem,
+        'weight': 500,
+        'line-height': 2rem,
+        'letter-spacing': .1666666667em,
+        'font-family': $body-font-family,
+        'text-transform': uppercase
+    ),
+    'small-1': (
+        'size': 11px,
+        'weight': 400,
+        'line-height': 14px,
+        'letter-spacing': .0333333333em,
+        'font-family': $body-font-family,
+        'text-transform': false
+    ),
+);
+
+$typography: ();
+
+@each $type, $values in $headings {
+    $typography: map-merge($typography, (#{$type}: map-values($values)));
+}

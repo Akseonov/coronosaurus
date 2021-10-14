@@ -1,0 +1,21 @@
+@if ($utility-typography-enable) {
+    $utilities: map-merge($utilities, (
+        "typography": (
+            responsive: $utility-responsive-typography-enable,
+            property: (
+                font-size,
+                font-weight,
+                line-height,
+                letter-spacing,
+                font-family,
+                text-transform
+            ),
+            class: '',
+            unimportant: (
+                font-weight,
+                line-height
+            ),
+            values: $typography
+        )
+    ));
+}
