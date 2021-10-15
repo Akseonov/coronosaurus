@@ -1,4 +1,6 @@
 import worldMap from '@/lib/jvectormap/content/world-mill';
+import { GetRequest } from '@/components/sendRequest';
+import { addCharsIntoString } from "@/lib/classes/utility";
 
 const $ = require( 'jquery' );
 require( 'jvectormap-next' )( $ );
@@ -8,34 +10,35 @@ export class WorldMap {
 		this.init( elem );
 	}
 
-	init( elem ) {
+	async init( elem ) {
+		const items = await new GetRequest( '', {
+			url: '/v3/covid-19/countries',
+		} ).sendRequest();
+		console.log( items );
+
+		const getData = {};
+		const allData = {};
+
+		items.forEach( item => {
+			getData[`${ item.countryInfo.iso2 }`] = item.cases;
+			allData[`${ item.countryInfo.iso2 }`] = {
+				recovered: item.recovered,
+				cases: item.cases,
+				deaths: item.deaths,
+			};
+		} );
+
+		console.log( getData );
+
 		const $mountNode = $( elem );
-		// $mountNode.empty().css( 'height', 250 );
 
 		$.fn.vectorMap( 'addMap', 'world_mill', worldMap );
-		// $mountNode.vectorMap( {
-		// 	map: 'world_mill',
-		// } );
-
-		const gdpData = {
-			AF: 16.63,
-			AL: 11.58,
-			DZ: 158.97,
-			RU: 1500,
-		};
 
 		$mountNode.vectorMap( {
 			map: 'world_mill',
 			backgroundColor: '#ffffff',
-			transX: 0,
-			transY: 0,
-			scale: 3,
-			baseTransX: 0,
-			baseTransY: 0,
-			baseScale: 1,
 			regionStyle: {
 				initial: {
-					// fill: '#ff4747',
 					fill: "white",
 					"stroke-width": 1,
 					stroke: '#9a9a9a',
@@ -52,14 +55,17 @@ export class WorldMap {
 			},
 			series: {
 				regions: [ {
-					values: gdpData,
-					scale: [ '#ffb8b8', '#ff6868' ],
+					values: getData,
+					scale: [ '#ffe7e7', '#ff1f1f' ],
 					normalizeFunction: 'polynomial',
 				} ],
 			},
-			// onRegionTipShow: function( e, el, code ) {
-			// 	el.html( el.html() + ' (GDP - ' + gdpData[code] + ')' );
-			// },
+			onRegionTipShow: function( e, el, code ) {
+				el.html( `${ el.html() }
+				<br><br>Заболевших <br> ${ addCharsIntoString( allData[code].cases, ' ', 3 ) }
+				<br><br>Умерших <br> ${ addCharsIntoString( allData[code].deaths, ' ', 3 ) }
+				<br><br>Выздоровевших <br> ${ addCharsIntoString( allData[code].recovered, ' ', 3 ) }` );
+			},
 		} );
 	}
 }

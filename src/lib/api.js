@@ -67,7 +67,7 @@ function apiCall( {
 		} )
 			.then( response => {
 				try {
-					console.log( response );
+					// console.log( response.data );
 					resolve( response.data );
 				} catch ( e ) {
 					reject( e );

@@ -7,6 +7,7 @@ import { HelloWorld } from '@/components/hello-world';
 import { GetRequest } from '@/components/sendRequest';
 import { WorldMap } from '@/components/worldmap';
 import { ModalMobile } from "@/components/modals/modals";
+import { GetInfoAll, GetInfoPerDay } from '@/components/info/getInfos';
 
 async function init() {
 	try {
@@ -16,6 +17,8 @@ async function init() {
 				url: '/v3/covid-19/all',
 			},
 		} );
+		createUiComponents( '#latest-data-all', GetInfoAll );
+		createUiComponents( '#latest-data-per-day', GetInfoPerDay );
 		createUiComponents( '#world-map', WorldMap );
 		createUiComponents( '[data-menu-burger]', ModalMobile );
 //		createUiComponents( '.get-request', GetRequest, {

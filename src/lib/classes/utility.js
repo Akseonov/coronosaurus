@@ -72,3 +72,28 @@ export function createUiComponents( selector, Component, params = {} ) {
 			} );
 		} );
 }
+
+/**
+ * Добавляет символ, с конца, через определённый шаг
+ *
+ * например addCharsIntoString( 12345678, ' ', 3 )
+ * вернёт 12 345 678
+ *
+ * @param value - строка, в которую нужно добавить символы
+ * @param char - символ для добавления
+ * @param step - шаг через который происходит добавление
+ */
+export function addCharsIntoString( value, char, step ) {
+	const valueArr = String( value ).split( '' ).reverse();
+	const valueChangedArr = valueArr.slice();
+	let count = 0;
+
+	valueArr.forEach( ( letter, index ) => {
+		if ( ( +index + 1 ) % +step === 0 ) {
+			valueChangedArr.splice( index + 1 + count, 0, char );
+			count++;
+		}
+	} );
+
+	return valueChangedArr.reverse().join( '' );
+}
