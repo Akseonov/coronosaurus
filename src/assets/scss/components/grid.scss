@@ -43,3 +43,17 @@
 //
 // Common styles for small and large grid columns
 @include make-grid-columns;
+
+@include media-breakpoint-up('sm') {
+    .container {
+        padding: 0 32px;
+    }
+}
+
+@include media-breakpoint-up('lg') {
+    .container {
+        padding: 0;
+        width: 1140px;
+        margin: auto;
+    }
+}

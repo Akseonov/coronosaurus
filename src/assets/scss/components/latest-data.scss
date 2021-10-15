@@ -61,3 +61,49 @@
         text-transform: uppercase;
     }
 }
+
+@include media-breakpoint-up('sm') {
+    .latest-data {
+        padding-top: 140px;
+        margin-top: -120px;
+
+        &__h2 {
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        &__cards {
+            width: 100%;
+            flex-flow: wrap row;
+            justify-content: space-between;
+        }
+    }
+
+    .card-data {
+        &__text {
+            font-size: 14px;
+        }
+    }
+}
+
+@include media-breakpoint-up('lg') {
+    .latest-data {
+        &__container {
+            padding-top: 50px;
+        }
+
+        &__h2 {
+            font-size: 30px;
+        }
+    }
+
+    .card-data {
+        &__count {
+            font-size: 38px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+    }
+}

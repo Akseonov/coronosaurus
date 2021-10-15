@@ -49,4 +49,53 @@
         height: 20px;
         fill: #424242;
     }
+
+    &__nav {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up('sm') {
+    .header {
+        padding: 10px 32px;
+    }
+}
+
+@include media-breakpoint-up('lg') {
+    .header {
+        height: 73px;
+        justify-content: flex-end;
+
+        &__logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__menu-burger {
+            display: none;
+        }
+
+        &__nav {
+            display: flex;
+            align-items: center;
+        }
+
+        &__nav-link {
+            color: #000000;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+            text-transform: uppercase;
+            margin-left: 16px;
+            transition: color 0.5s;
+
+            &:hover {
+                color: #bb1a1a;
+            }
+        }
+    }
 }

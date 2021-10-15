@@ -32,3 +32,15 @@
         }
     }
 }
+
+@include media-breakpoint-up('lg') {
+    .copyright {
+        border: none;
+        width: 50%;
+
+        &__text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

@@ -4,7 +4,6 @@
     &__container {
         display: flex;
         justify-content: center;
-        border-top: 1px solid #dfdfdf;
     }
 
     &__logo {
@@ -37,5 +36,30 @@
         text-transform: uppercase;
         transition: color 0.5s;
         color: black;
+    }
+}
+
+@include media-breakpoint-up('lg') {
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid #dfdfdf;
+        padding: 25px 0;
+
+        &__container {
+            width: 50%;
+            border-right: 1px solid #dfdfdf;
+        }
+
+        &__logo-img {
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &__logo-text {
+            font-size: 18px;
+        }
     }
 }

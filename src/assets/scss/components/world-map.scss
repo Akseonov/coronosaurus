@@ -5,6 +5,33 @@
     margin-top: -90px;
 }
 
+.world-map-tip {
+    &__h2 {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+    }
+
+    &__container {
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+    }
+
+    &__count {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+    }
+}
+
 //svg {
 //    touch-action: none;
 //}
@@ -140,4 +167,13 @@
     vertical-align: middle;
     line-height: 20px;
     padding-left: 3px;
+}
+
+@include media-breakpoint-up('sm') {
+    .world-map {
+        height: 400px;
+        width: 100%;
+        padding-top: 140px;
+        margin-top: -120px;
+    }
 }

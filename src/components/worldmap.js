@@ -61,40 +61,34 @@ export class WorldMap {
 				} ],
 			},
 			onRegionTipShow: function( e, el, code ) {
-				el.html( `${ el.html() }
-				<br><br>Заболевших <br> ${ addCharsIntoString( allData[code].cases, ' ', 3 ) }
-				<br><br>Умерших <br> ${ addCharsIntoString( allData[code].deaths, ' ', 3 ) }
-				<br><br>Выздоровевших <br> ${ addCharsIntoString( allData[code].recovered, ' ', 3 ) }` );
+				if ( allData[code] ) {
+					el.html( `<div class="world-map-tip"><h2 class="world-map-tip__h2 mb-2">${ el.html() }</h2>
+					<div class="world-map-tip__container">
+						<div class="world-map-tip__text mb-1">Заболевших</div>
+						<div class="world-map-tip__count">
+							${ allData[code].cases ? addCharsIntoString( allData[code].cases, ' ', 3 ) : 'нет данных' }
+						</div>
+					</div>
+					<div class="world-map-tip__container">
+						<div class="world-map-tip__text mb-1">Умерших</div>
+						<div class="world-map-tip__count">
+							${ allData[code].deaths ? addCharsIntoString( allData[code].deaths, ' ', 3 ) : 'нет данных' }
+						</div>
+					</div>
+					<div class="world-map-tip__container">
+						<div class="world-map-tip__text mb-1">Выздоровевших</div>
+						<div class="world-map-tip__count">
+							${ allData[code].recovered ? addCharsIntoString( allData[code].recovered, ' ', 3 ) : 'нет данных' }
+						</div>
+					</div>` );
+				} else {
+					el.html( `<div class="world-map-tip"><h2 class="world-map-tip__h2 mb-2">${ el.html() }</h2></div>
+						<div class="world-map-tip__container">
+							<div class="world-map-tip__text mb-1">Нет данных</div>
+						</div>
+					` );
+				}
 			},
 		} );
 	}
 }
-
-// const $ = require( 'jquery' );
-
-// var $mountNode = $( '#world-map' );
-// $mountNode.empty().css( 'height', 500 );
-
-// require('jvectormap-next')($);
-// $.fn.vectorMap( 'addMap', 'world_mill', require( '@/lib/jvectormap/content/world-mill' ) );
-
-// var gdpData = {
-// 	'AF': 16.63,
-// 	'AL': 11.58,
-// 	'DZ': 158.97,
-// 	// ...
-// }
-
-// $mountNode.vectorMap( {
-// map: 'world_mill',
-// series: {
-// 	regions: [{
-// 		values: gdpData,
-// 		scale: ['#C8EEFF', '#0071A4'],
-// 		normalizeFunction: 'polynomial'
-// 	}]
-// },
-// onRegionTipShow: function(e, el, code){
-// 	el.html(el.html()+' (GDP - '+gdpData[code]+')');
-// }
-// } );
