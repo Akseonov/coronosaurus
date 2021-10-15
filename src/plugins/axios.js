@@ -1,11 +1,16 @@
 import axios from 'axios';
-import { RequestError, ApiResponseError } from '@/lib/classes/error';
+// import { RequestError, ApiResponseError } from '@/lib/classes/error';
+import { RequestError } from '@/lib/classes/error';
+// const HttpsProxyAgent = require( 'https-proxy-agent' );
 
 const config = {
-	baseURL: 'https://disease.sh',
+//	baseURL: 'https://disease.sh',
+//	baseURL: 'https://api.covidtracking.com',
+	baseURL: 'http://localhost:4000/',
 	timeout: 60 * 1000,
 	withCredentials: true,
 };
+
 const instance = axios.create( config );
 
 instance.interceptors.request.use(
@@ -25,13 +30,12 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
 	function( response ) {
 		// The request was made and the server responded with a status code in the range of 2xx
-		const { error, errorMessage, result } = response.data;
+//		const { error, errorMessage, result } = response.data;
 
-		if ( error ) {
-			throw new ApiResponseError( errorMessage );
-		}
-
-		response.data = result;
+//		if ( error ) {
+//			throw new ApiResponseError( errorMessage );
+//		}
+//		response.data = result;
 		return response;
 	},
 	function( e ) {

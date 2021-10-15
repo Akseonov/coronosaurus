@@ -48,7 +48,9 @@ function apiPost( {
 function apiCall( {
 	url,
 	method = 'GET',
-	headers = {},
+	headers = {
+		'Access-Control-Allow-Origin': '*',
+	},
 	params,
 	data,
 	cancelToken,
@@ -65,6 +67,7 @@ function apiCall( {
 		} )
 			.then( response => {
 				try {
+					console.log( response );
 					resolve( response.data );
 				} catch ( e ) {
 					reject( e );

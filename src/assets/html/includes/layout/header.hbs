@@ -5,6 +5,7 @@
 	<title>Title</title>
 	<meta name="viewport"
 		  content="width=device-width, initial-scale=1, maximum-scale=1">
+
 	<!-- MDI-иконки -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
 </head>
@@ -22,6 +23,12 @@
 				<div class="header__logo-img"><img src="@/assets/img/main-logo.png" alt="main-logo"></div>
 				<div class="header__logo-text ml-4">Covid-19</div>
 			</a>
+			<div class="header__menu-burger">
+				<svg class="header__menu-burger__svg" data-menu-burger>
+					<use xlink:href="#burger-menu"></use>
+				</svg>
+			</div>
+			{{> components/mobile-menu }}
 		</header>
 
 		<!-- Основной контейнер сайта -->

@@ -1,9 +1,14 @@
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 16px;
     box-shadow: 0 20px 20px 0 #f6f6f6;
+    top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fff;
 
     &__logo {
         display: flex;
@@ -31,5 +36,17 @@
         text-transform: uppercase;
         transition: color 0.5s;
         color: black;
+    }
+
+    &__menu-burger {
+        display: flex;
+        width: 18px;
+        height: 15px;
+    }
+
+    &__menu-svg {
+        width: 20px;
+        height: 20px;
+        fill: #424242;
     }
 }

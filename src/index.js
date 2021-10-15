@@ -5,6 +5,8 @@ import '@/behaviors/hello-world';
 import { createUiComponents, log } from '@/lib/classes/utility';
 import { HelloWorld } from '@/components/hello-world';
 import { GetRequest } from '@/components/sendRequest';
+import { WorldMap } from '@/components/worldmap';
+import { ModalMobile } from "@/components/modals/modals";
 
 async function init() {
 	try {
@@ -14,6 +16,13 @@ async function init() {
 				url: '/v3/covid-19/all',
 			},
 		} );
+		createUiComponents( '#world-map', WorldMap );
+		createUiComponents( '[data-menu-burger]', ModalMobile );
+//		createUiComponents( '.get-request', GetRequest, {
+//			options: {
+//				url: 'v1/us/daily.json',
+//			},
+//		} );
 	} catch ( e ) {
 		log( e.message );
 	}

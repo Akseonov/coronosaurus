@@ -53,7 +53,7 @@ logger.info( `Mode: ${ mode }` );
 const config = {
 	mode,
 	entry: {
-		'legacy-main': './src/index.js',
+		'coronosaurus': './src/index.js',
 	},
 	output: {
 		filename: '[name].js',
@@ -136,7 +136,7 @@ const config = {
 						loader: 'svg-sprite-loader',
 						options: {
 							extract: true,
-							spriteFilename: 'legacy-sprite.svg',
+							spriteFilename: 'coronosaurus.svg',
 						},
 					},
 				],
@@ -228,7 +228,7 @@ const config = {
 				defaultVendors: {
 					test: /node_modules/,
 					chunks: 'all',
-					name: 'legacy-vendors',
+					name: 'coronosaurus-vendors',
 					enforce: true,
 				},
 			},
