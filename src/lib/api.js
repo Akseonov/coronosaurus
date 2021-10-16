@@ -49,7 +49,7 @@ function apiCall( {
 	url,
 	method = 'GET',
 	headers = {
-		'Access-Control-Allow-Origin': '*',
+		'Access-Control-Allow-Origin': 'http://p28.hackathon.crtweb.ru/',
 	},
 	params,
 	data,

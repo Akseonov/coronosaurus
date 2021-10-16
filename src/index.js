@@ -6,7 +6,7 @@ import { createUiComponents, log } from '@/lib/classes/utility';
 import { HelloWorld } from '@/components/hello-world';
 import { GetRequest } from '@/components/sendRequest';
 import { WorldMap } from '@/components/worldmap';
-import { ModalMobile } from "@/components/modals/modals";
+import { ModalMobile, ModalDetail } from "@/components/modals/modals";
 import { GetInfoAll, GetInfoPerDay } from '@/components/info/getInfos';
 
 async function init() {
@@ -21,6 +21,7 @@ async function init() {
 		createUiComponents( '#latest-data-per-day', GetInfoPerDay );
 		createUiComponents( '#world-map', WorldMap );
 		createUiComponents( '[data-menu-burger]', ModalMobile );
+		createUiComponents( '[data-world-map]', ModalDetail );
 	} catch ( e ) {
 		log( e.message );
 	}

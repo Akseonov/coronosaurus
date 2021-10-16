@@ -4,7 +4,7 @@ import { RequestError } from '@/lib/classes/error';
 // const HttpsProxyAgent = require( 'https-proxy-agent' );
 
 const config = {
-//	baseURL: 'https://disease.sh',
+	// baseURL: 'https://disease.sh',
 //	baseURL: 'https://api.covidtracking.com',
 	baseURL: 'http://localhost:4000/',
 	timeout: 60 * 1000,

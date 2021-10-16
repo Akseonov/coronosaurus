@@ -253,6 +253,9 @@ if ( isDev ) {
 			paths: glob.sync( `${ paths.src }/**/*`, {
 				nodir: true,
 			} ),
+			safelist: {
+				greedy: [ /^jvectormap-/, /^tab-/, /^tabs/, /^research/ ],
+			},
 		} ),
 	);
 }
