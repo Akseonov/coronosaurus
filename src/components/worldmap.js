@@ -13,22 +13,24 @@ export class WorldMap {
 	async init( elem ) {
 		const items = await new GetRequest( '', {
 			url: '/v3/covid-19/countries',
-		} ).sendRequest();
-		console.log( items );
+		} ).sendRequest().catch( e => {
+			console.log( e );
+			return {};
+		} );
 
 		const getData = {};
 		const allData = {};
 
-		items.forEach( item => {
-			getData[`${ item.countryInfo.iso2 }`] = item.cases;
-			allData[`${ item.countryInfo.iso2 }`] = {
-				recovered: item.recovered,
-				cases: item.cases,
-				deaths: item.deaths,
-			};
-		} );
-
-		console.log( getData );
+		if ( Object.keys( items ).length !== 0 ) {
+			items.forEach( item => {
+				getData[`${ item.countryInfo.iso2 }`] = item.cases;
+				allData[`${ item.countryInfo.iso2 }`] = {
+					recovered: item.recovered,
+					cases: item.cases,
+					deaths: item.deaths,
+				};
+			} );
+		}
 
 		const $mountNode = $( elem );
 
@@ -51,6 +53,7 @@ export class WorldMap {
 					fill: 'yellow',
 				},
 				selectedHover: {
+
 				},
 			},
 			series: {

@@ -177,3 +177,12 @@
         margin-top: -120px;
     }
 }
+
+@include media-breakpoint-up('sm') {
+    .world-map {
+        height: 600px;
+        width: 100%;
+        padding-top: 140px;
+        margin-top: -120px;
+    }
+}

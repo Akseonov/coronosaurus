@@ -39,9 +39,15 @@ export class GetInfo {
 	 * Отрисовывает полученные через api данные
 	 */
 	render() {
-		this.options.recovered.innerHTML = addCharsIntoString( this.items.recovered, ' ', 3 );
-		this.options.deaths.innerHTML = addCharsIntoString( this.items.deaths, ' ', 3 );
-		this.options.cases.innerHTML = addCharsIntoString( this.items.cases, ' ', 3 );
+		if ( Object.keys( this.items ).length !== 0 ) {
+			this.options.recovered.innerHTML = addCharsIntoString( this.items.recovered, ' ', 3 );
+			this.options.deaths.innerHTML = addCharsIntoString( this.items.deaths, ' ', 3 );
+			this.options.cases.innerHTML = addCharsIntoString( this.items.cases, ' ', 3 );
+		} else {
+			this.options.recovered.innerHTML = 'Нет данных';
+			this.options.deaths.innerHTML = 'Нет данных';
+			this.options.cases.innerHTML = 'Нет данных';
+		}
 	}
 
 	/**
@@ -51,7 +57,10 @@ export class GetInfo {
 	async getInfo() {
 		const items = await new GetRequest( '', {
 			url: this.options.url,
-		} ).sendRequest();
+		} ).sendRequest()
+			.catch( e => {
+				return {};
+			} );
 		this.items = items;
 	}
 }

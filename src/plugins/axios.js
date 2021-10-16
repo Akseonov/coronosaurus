@@ -41,8 +41,8 @@ instance.interceptors.response.use(
 	function( e ) {
 		console.log( e );
 		// The request was made and the server responded with a status code that falls out of the range of 2xx
-		const { status, statusText } = e.response;
-		return Promise.reject( new RequestError( status, statusText ) );
+		// const { status, statusText } = e.response;
+		return Promise.reject( new RequestError( e ) );
 	},
 );
 

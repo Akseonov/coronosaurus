@@ -21,11 +21,6 @@ async function init() {
 		createUiComponents( '#latest-data-per-day', GetInfoPerDay );
 		createUiComponents( '#world-map', WorldMap );
 		createUiComponents( '[data-menu-burger]', ModalMobile );
-//		createUiComponents( '.get-request', GetRequest, {
-//			options: {
-//				url: 'v1/us/daily.json',
-//			},
-//		} );
 	} catch ( e ) {
 		log( e.message );
 	}

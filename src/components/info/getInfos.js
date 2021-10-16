@@ -23,8 +23,14 @@ export class GetInfoPerDay extends GetInfo {
 	}
 
 	render() {
-		this.options.recovered.innerHTML = addCharsIntoString( this.items.todayRecovered, ' ', 3 );
-		this.options.deaths.innerHTML = addCharsIntoString( this.items.todayDeaths, ' ', 3 );
-		this.options.cases.innerHTML = addCharsIntoString( this.items.todayCases, ' ', 3 );
+		if ( Object.keys( this.items ).length !== 0 ) {
+			this.options.recovered.innerHTML = addCharsIntoString( this.items.todayRecovered, ' ', 3 );
+			this.options.deaths.innerHTML = addCharsIntoString( this.items.todayDeaths, ' ', 3 );
+			this.options.cases.innerHTML = addCharsIntoString( this.items.todayCases, ' ', 3 );
+		} else {
+			this.options.recovered.innerHTML = 'Нет данных';
+			this.options.deaths.innerHTML = 'Нет данных';
+			this.options.cases.innerHTML = 'Нет данных';
+		}
 	}
 }
